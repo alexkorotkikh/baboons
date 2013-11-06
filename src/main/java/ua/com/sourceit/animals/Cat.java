@@ -20,4 +20,8 @@ public class Cat extends Animal {
         System.out.println("Myau!!!");
     }
 
+    public static Animal createRandomAnimal() {
+        return new Cat("");
+    }
+
 }

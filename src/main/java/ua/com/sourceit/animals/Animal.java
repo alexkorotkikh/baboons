@@ -4,33 +4,43 @@ import java.util.Random;
 
 public abstract class Animal {
     private String name;
-    private int pleasureness;
+    private int pleasantness;
 
     public Animal(String n /*, int p*/) {
         name = n;
 
-        pleasureness = new Random().nextInt(getMaxPleasureness() - 1) + 1;
+        pleasantness = new Random().nextInt(getMaxPleasantness() - 1) + 1;
 
-//        if (p <= 0) pleasureness = 1;
-//        else if (p > getMaxPleasureness()) pleasureness = getMaxPleasureness();
-//        else pleasureness = p;
+//        if (p <= 0) pleasantness = 1;
+//        else if (p > getMaxPleasantness()) pleasantness = getMaxPleasantness();
+//        else pleasantness = p;
+    }
+
+    public static Animal createRandomAnimal() {
+        return new Hedgehog("");
     }
 
     public String getName() {
         return name;
     }
 
-    public int getPleasureness() {
-        return pleasureness;
+    public int getPleasantness() {
+        return pleasantness;
     }
 
     void beingTouching() {
-        pleasureness -= 10;
+        pleasantness -= 10;
     }
 
     public abstract void say();
 
-    protected int getMaxPleasureness() {
-        return 100;
+    protected int getMaxPleasantness() {
+        return maxPleasantness;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public static int maxPleasantness = 100;
 }

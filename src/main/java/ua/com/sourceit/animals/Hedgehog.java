@@ -11,7 +11,7 @@ public class Hedgehog extends Animal {
     }
 
     @Override
-    protected int getMaxPleasureness() {
+    protected int getMaxPleasantness() {
         return 50;
     }
 
