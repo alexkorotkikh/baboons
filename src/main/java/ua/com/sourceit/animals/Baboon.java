@@ -1,5 +1,7 @@
 package ua.com.sourceit.animals;
 
+import ua.com.sourceit.Color;
+
 /**
  * User: alexkorotkikh
  * Date: 11/2/13
@@ -7,7 +9,7 @@ package ua.com.sourceit.animals;
  */
 public class Baboon extends Animal implements CanLay {
     public Baboon(String n) {
-        super(n);
+        super(n, Color.BLACK);
     }
 
     public Animal choose(Animal[] animals) {
@@ -25,7 +27,7 @@ public class Baboon extends Animal implements CanLay {
 
     @Override
     public void say() {
-        System.out.println("qwetwesfhert8utyuohuip");
+        System.out.println(color + " baboon says qwetwesfhert8utyuohuip");
     }
 
     @Override

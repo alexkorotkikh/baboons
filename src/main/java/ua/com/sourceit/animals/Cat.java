@@ -1,5 +1,7 @@
 package ua.com.sourceit.animals;
 
+import ua.com.sourceit.Color;
+
 /**
  * User: alexkorotkikh
  * Date: 11/2/13
@@ -7,7 +9,7 @@ package ua.com.sourceit.animals;
  */
 public class Cat extends Animal {
     public Cat(String n) {
-        super(n);
+        super(n, Color.WHITE);
     }
 
     @Override

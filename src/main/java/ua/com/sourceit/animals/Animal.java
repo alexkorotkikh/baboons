@@ -1,19 +1,18 @@
 package ua.com.sourceit.animals;
 
+import ua.com.sourceit.Color;
+
 import java.util.Random;
 
 public abstract class Animal {
     private String name;
     private int pleasantness;
+    protected Color color;
 
-    public Animal(String n /*, int p*/) {
+    public Animal(String n, Color c) {
         name = n;
-
+        color = c;
         pleasantness = new Random().nextInt(getMaxPleasantness() - 1) + 1;
-
-//        if (p <= 0) pleasantness = 1;
-//        else if (p > getMaxPleasantness()) pleasantness = getMaxPleasantness();
-//        else pleasantness = p;
     }
 
     public static Animal createRandomAnimal() {

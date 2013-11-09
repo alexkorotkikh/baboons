@@ -1,32 +1,21 @@
 package ua.com.sourceit;
 
-import ua.com.sourceit.animals.Animal;
 import ua.com.sourceit.animals.Baboon;
-import ua.com.sourceit.animals.CanLay;
+import ua.com.sourceit.animals.Cat;
 
 /**
  * Hello world!
  */
 public class App {
     public static void main(String[] args) {
+        final Object baboon = new Cat("Baboon");
 
-        Animal[] animals = {
-                Animal.createRandomAnimal(),
-                Animal.createRandomAnimal(),
-                Animal.createRandomAnimal(),
-                Animal.createRandomAnimal()
-        };
-
-        CanLay[] layers = {
-                new Person(),
-                new Baboon("aasd")
-        };
-
-        for (CanLay layer : layers) {
-            for (Animal animal : animals) {
-                layer.lay(animal);
-                animal.say();
-            }
+        final boolean b = baboon instanceof Baboon;
+        if (b) {
+            ((Baboon) baboon).say();
+        } else {
+            System.out.println("not baboon :(");
         }
+
     }
 }
