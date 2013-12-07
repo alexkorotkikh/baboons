@@ -1,6 +1,6 @@
-package ua.com.sourceit.animals;
+package ua.com.sourceit.baboons.animals;
 
-import ua.com.sourceit.Color;
+import ua.com.sourceit.baboons.Color;
 
 /**
  * User: alexkorotkikh

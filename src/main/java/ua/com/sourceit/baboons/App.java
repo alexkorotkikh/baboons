@@ -1,7 +1,7 @@
-package ua.com.sourceit;
+package ua.com.sourceit.baboons;
 
-import ua.com.sourceit.animals.Baboon;
-import ua.com.sourceit.animals.Cat;
+import ua.com.sourceit.baboons.animals.Baboon;
+import ua.com.sourceit.baboons.animals.Cat;
 
 /**
  * Hello world!

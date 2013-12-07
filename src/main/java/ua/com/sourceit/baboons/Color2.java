@@ -1,4 +1,4 @@
-package ua.com.sourceit;
+package ua.com.sourceit.baboons;
 
 /**
  * User: alexkorotkikh

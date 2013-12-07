@@ -1,7 +1,7 @@
-package ua.com.sourceit;
+package ua.com.sourceit.baboons;
 
-import ua.com.sourceit.animals.Animal;
-import ua.com.sourceit.animals.CanLay;
+import ua.com.sourceit.baboons.animals.Animal;
+import ua.com.sourceit.baboons.animals.CanLay;
 
 /**
  * User: alexkorotkikh
