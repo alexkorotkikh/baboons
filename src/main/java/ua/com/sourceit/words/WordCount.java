@@ -1,30 +1,16 @@
 package ua.com.sourceit.words;
 
-import java.io.BufferedReader;
+import ua.com.sourceit.Utils;
+
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
 public class WordCount {
     public Map<String, Integer> count(File file) throws IOException {
-        String text = readFromFile(file);
+        String text = Utils.readFromFile(file);
         Collection<String> normalizedWords = normalize(text);
         return mapOfWords(normalizedWords);
-    }
-
-    private String readFromFile(File file) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(file));
-        StringBuilder sb = new StringBuilder();
-        String line;
-        try {
-            while ((line = br.readLine()) != null) {
-                sb.append(line);
-            }
-        } finally {
-            br.close();
-        }
-        return sb.toString();
     }
 
     private Collection<String> normalize(String text) {
