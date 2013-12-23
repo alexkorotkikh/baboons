@@ -1,105 +1,35 @@
 package ua.com.sourceit.employees;
 
+import java.sql.SQLException;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 /**
  * User: alexkorotkikh
- * Date: 12/13/13
- * Time: 9:08 PM
+ * Date: 12/20/13
+ * Time: 7:18 PM
  */
-public class EmployeeDao {
-    private final EmployeeDataSource dataSource;
+public interface EmployeeDao {
+    List<Employee> getAllEmployees() throws ParseException, SQLException;
 
-    public EmployeeDao(EmployeeDataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+    Employee getEmployeeById(Integer id) throws ParseException, SQLException;
 
-    public List<Employee> getAllEmployees() throws ParseException {
-        List<String[]> data = dataSource.getData();
+    Collection<Employee> getEmployeesByTitle(String title) throws ParseException;
 
-        List<Employee> employees = new ArrayList<Employee>();
-        for (String[] emp : data) {
-            Employee employee = new Employee();
-            employee.setId(Integer.parseInt(emp[0]));
-            employee.setLastname(emp[1]);
-            employee.setTitle(emp[2]);
+    Collection<Employee> getEmployeesWithSalaryHigherTham(Integer salary) throws ParseException;
 
-            if (emp[3].equals("NULL")) {
-                employee.setManagerId(null);
-            } else {
-                employee.setManagerId(Integer.parseInt(emp[3]));
-            }
+    Collection<Employee> getEmployeesWithNameStartsWith(String firstLetter) throws ParseException;
 
-            employee.setStartDate(sdf.parse(emp[4]));
-            employee.setSalary(Integer.parseInt(emp[5]));
-            employees.add(employee);
-        }
+    Collection<Employee> getSubordinatesByManagerId(Integer managerId) throws ParseException;
 
-        return employees;
-    }
+    void saveEmployee(Employee employee) throws SQLException;
 
-    public Employee getEmployeeById(Integer id) throws ParseException {
-        for (Employee employee : getAllEmployees()) {
-            if (employee.getId() == id) {
-                return employee;
-            }
-        }
+    void updateEmployee(Employee employee);
 
-        return null;
-    }
+    void deleteEmployee(Employee employee);
 
-    public Collection<Employee> getEmployeesByTitle(String title) throws ParseException {
-        Collection<Employee> col = new ArrayList<Employee>();
-        for (Employee employee : getAllEmployees()) {
-            if (employee.getTitle().equals(title)) {
-                col.add(employee);
-            }
-        }
+    void setManagerForEmployee(Employee employee, Employee manager);
 
-        return col;
-    }
-
-    public Collection<Employee> getEmployeesWithSalaryHigherTham(Integer salary) throws ParseException {
-        Collection<Employee> col = new ArrayList<Employee>();
-        for (Employee employee : getAllEmployees()) {
-            if (employee.getSalary() >= salary) {
-                col.add(employee);
-            }
-        }
-
-        return col;
-    }
-
-    public Collection<Employee> getEmployeesWithNameStartsWith(String firstLetter) throws ParseException {
-        Collection<Employee> col = new ArrayList<Employee>();
-        for (Employee employee : getAllEmployees()) {
-            if (employee.getLastname().startsWith(firstLetter)) {
-                col.add(employee);
-            }
-        }
-
-        return col;
-    }
-
-    public Collection<Employee> getSubordinatesByManagerId(Integer managerId) throws ParseException {
-        Collection<Employee> col = new ArrayList<Employee>();
-        for (Employee employee : getAllEmployees()) {
-            if (employee.getManagerId().equals(managerId)) {
-                col.add(employee);
-            }
-        }
-
-        return col;
-    }
-
-    public void saveEmployee(Employee employee) {
-
-    }
-
-    private static SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
-
+    Collection<Employee> getEmployeesByName(String name) throws SQLException;
 }

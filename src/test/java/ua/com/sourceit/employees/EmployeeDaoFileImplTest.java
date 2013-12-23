@@ -11,13 +11,13 @@ import static org.junit.Assert.assertEquals;
  * Date: 12/14/13
  * Time: 12:31 PM
  */
-public class EmployeeDaoTest {
+public class EmployeeDaoFileImplTest {
     @Test
     public void testGetAllEmployees() throws Exception {
         //Given
         EmployeeDataSource ds =
                 EmployeeDataSource.createDataSourceByFilename("src/main/resources/employees.txt");
-        EmployeeDao dao = new EmployeeDao(ds);
+        EmployeeDaoFileImpl dao = new EmployeeDaoFileImpl(ds);
 
         //When
         List<Employee> allEmployees = dao.getAllEmployees();

@@ -15,6 +15,16 @@ public class Employee {
     private Date startDate;
     private int salary;
 
+    public Employee() {
+    }
+
+    public Employee(String lastname, String title, Date startDate, int salary) {
+        this.lastname = lastname;
+        this.title = title;
+        this.startDate = startDate;
+        this.salary = salary;
+    }
+
     public int getId() {
         return id;
     }
