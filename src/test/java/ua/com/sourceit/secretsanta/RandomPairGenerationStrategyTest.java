@@ -22,7 +22,6 @@ public class RandomPairGenerationStrategyTest {
     @Before
     public void setUp() throws Exception {
         random = new RandomPairGenerationStrategy();
-
     }
 
     @Test
