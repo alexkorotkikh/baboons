@@ -1,0 +1,15 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <servlet>
+        <servlet-name>secretSanta</servlet-name>
+        <servlet-class>ua.com.sourceit.secretsanta.SecretSantaServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>secretSanta</servlet-name>
+        <url-pattern>/api/*</url-pattern>
+    </servlet-mapping>
+</web-app>

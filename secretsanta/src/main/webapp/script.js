@@ -114,15 +114,16 @@ $("body").ready(function () {
             page = "pairs.json"
         }
 
-        $.get("/baboons/" + page, function (data) {
+        $.get(page, function (data) {
             if (page.contains(".html")) {
                 $("#main").html(data);
                 $("#saveGroup").click(function (e) {
                     e.preventDefault();
-
-                    alert("Saved!")
-                    $("#main").html("");
-                })
+                    $.post("/api/addgroup", {group: $("#group").val()}, function (msg) {
+                        alert(msg);
+                        $("#main").html("");
+                    });
+                });
             } else if (page.contains(".json")) {
                 var str = ""
                 for (var key in data) {

@@ -13,6 +13,8 @@ public interface SecretSantaCommand {
 
     List<String> getInputDescriptions();
 
+    List<String> getParamNames();
+
     void addInput(String s);
 
     void executeCommand();
@@ -56,6 +58,13 @@ class AddGroupCommand extends AbstractSecretSantaCommand {
     }
 
     @Override
+    public List<String> getParamNames() {
+        List<String> paramNames = new ArrayList<String>();
+        paramNames.add("group");
+        return paramNames;
+    }
+
+    @Override
     public void executeCommand() {
         dao.createGroup(inputList.get(0));
     }
@@ -77,6 +86,14 @@ class AddUserCommand extends AbstractSecretSantaCommand {
     }
 
     @Override
+    public List<String> getParamNames() {
+        List<String> paramNames = new ArrayList<String>();
+        paramNames.add("group");
+        paramNames.add("user");
+        return paramNames;
+    }
+
+    @Override
     public void executeCommand() {
         dao.createUser(inputList.get(0), inputList.get(1));
     }
@@ -90,6 +107,11 @@ class ExitCommand extends AbstractSecretSantaCommand {
 
     @Override
     public List<String> getInputDescriptions() {
+        return null;
+    }
+
+    @Override
+    public List<String> getParamNames() {
         return null;
     }
 

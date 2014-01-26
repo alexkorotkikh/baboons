@@ -5,7 +5,10 @@
     <groupId>ua.com.sourceit</groupId>
     <artifactId>baboons</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <modules>
+        <module>secretsanta</module>
+    </modules>
+    <packaging>pom</packaging>
 
     <name>sourceit</name>
     <url>http://maven.apache.org</url>
