@@ -3,6 +3,16 @@
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
 <web-app>
+    <filter>
+        <filter-name>logging</filter-name>
+        <filter-class>ua.com.sourceit.secretsanta.LoggingFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>logging</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <servlet>
         <servlet-name>secretSanta</servlet-name>
         <servlet-class>ua.com.sourceit.secretsanta.SecretSantaServlet</servlet-class>
