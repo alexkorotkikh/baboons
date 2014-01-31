@@ -24,7 +24,6 @@ CREATE TABLE pair (
   receiver_id INT REFERENCES user (id)
 );
 
-
 SELECT
   name
 FROM present
