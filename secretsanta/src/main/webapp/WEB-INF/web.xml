@@ -21,7 +21,15 @@
         <servlet-name>secretSanta</servlet-name>
         <servlet-class>ua.com.sourceit.secretsanta.SecretSantaServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>loginServlet</servlet-name>
+        <servlet-class>ua.com.sourceit.secretsanta.LoginServlet</servlet-class>
+    </servlet>
 
+    <servlet-mapping>
+        <servlet-name>loginServlet</servlet-name>
+        <url-pattern>/api/login</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>secretSanta</servlet-name>
         <url-pattern>/api/*</url-pattern>

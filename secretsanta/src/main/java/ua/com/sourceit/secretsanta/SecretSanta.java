@@ -9,7 +9,7 @@ public class SecretSanta {
     SecretSantaDao dao;
 
     public SecretSanta() {
-        this.dao = new SecretSantaDao();
+//        this.dao = new SecretSantaDao(SessionFactorySingleton.getSessionFactory() );
     }
 
     public SecretSantaCommand createCommand(String input) {
